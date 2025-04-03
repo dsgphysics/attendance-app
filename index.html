@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Attendance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Class Attendance</h1>
+    <label>Select Date: <input type="date" id="attendanceDate"></label>
+    <input type="text" id="searchStudent" placeholder="Search Student">
+    <button onclick="markAllPresent()">Mark All Present</button>
+    <label for="deleteDate">Select Date to Delete:</label>
+<input type="date" id="deleteDate">
+<button onclick="deleteAttendance()">Delete Attendance</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Student Name</th>
+                <th>Absent</th>
+            </tr>
+        </thead>
+        <tbody id="attendance-table"></tbody>
+    </table>
+    <button onclick="submitAttendance()">Submit Attendance</button>
+    
+    
+    <h2>View Attendance</h2>
+    <button onclick="filterAttendance()">Show Records</button>
+    
+    <table>
+        
+        <tbody id="attendance-records"></tbody>
+    </table>
+    <button onclick="exportAttendance()">Export Attendance</button>
+
+    <div id="summary-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">×</span>
+            <h2>Attendance Summary</h2>
+            <pre id="summary-text"></pre>
+            <button onclick="copySummary()">📋 Copy Summary</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
